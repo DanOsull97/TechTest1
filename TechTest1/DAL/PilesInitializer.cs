@@ -6,7 +6,7 @@ using TechTest1.Models;
 
 namespace TechTest1.DAL
 {
-    public class PilesInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<PilesContext>
+    public class PilesInitializer : System.Data.Entity.DropCreateDatabaseAlways<PilesContext> //This will always drop the table when the program is opened. It's been done this way here to allow adding new values easier, but on a commercial table not dropping the table would be prefered, with only dropping it on a model change being another viable alternative
     {
         protected override void Seed(PilesContext context)
         {
