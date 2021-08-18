@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TechTest1.Models.Pile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+<p>
+    Find by Pile Number: @Html.TextBox("pileNumber")
+    Find by Commodity Code: @Html.TextBox("commodityCode")
+    Find by Location Name: @Html.TextBox("locationName")
+    Find by Warehouse Name: @Html.TextBox("warehouseName")
+    <input type="submit" value="Search" />
+</p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Commodity ID","Index", new { sortOrder = ViewBag.CodeSort })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrossWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SingleWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarehouseID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommodityID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrossWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SingleWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PileID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PileID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PileID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model TechTest1.Models.Pile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Commodity.CommodityCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Commodity.CommodityCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PileNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PileNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrossWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrossWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SingleWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SingleWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WarehouseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WarehouseID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PileID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
